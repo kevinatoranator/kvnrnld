@@ -1,0 +1,40 @@
+    a:link{ text-decoration: none;}
+    a:visited{ text-decoration: none;}
+    a:hover{ text-decoration: none;}
+    a:active{ text-decoration: none;}
+    a {color:var(--white);}
+    body {
+        margin: 8px auto;
+        /*white-space: pre-wrap;*/
+        font-family: Courier, monospace;
+        max-width: 777px;
+        font-size: 14px;
+        --bg: white;
+        --fg: black;
+        --red: red;
+        --blue: #0000cd;
+        --green: green;
+        --gray: gray;
+        --yellow: #f2be02;
+        background-color: var(--bg);
+        color: var(--fg);   
+    }
+    .dark-mode {
+        background-color: black;
+        color: white;
+        --blue: #4f68e8;
+        --yellow: #FFDF00;
+    }
+	.lang{
+		border-radius: 5px;
+		background: #5D3FD3;
+		float: right;
+		padding-right: 5px;
+	}
+	.book{
+		border-color: white;
+		border-width: 1px;
+		border-style: solid;
+	}
+	
+

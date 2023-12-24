@@ -1,0 +1,87 @@
+@font-face {
+	font-family: "AmpunBang";
+	src: 
+		url("aAmpunBang.tff") format("truetype"),
+		url("aAmpunBang.otf") format("opentype");
+}
+
+body{
+	background-color: #5a85d6;
+}
+
+.navbar{
+	overflow:hidden;
+	background-color: #1a2438;
+}
+
+.navbar a{
+	float: left;
+	color:white;
+	text-align:center;
+	padding:20px 16px;
+	text-decoration:none;
+}
+
+.navbar a:hover{
+	background-color: #4fa1e8;
+}
+
+
+.dropdown{
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbtn{
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding:20px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+
+.dropdown-content{
+	display: none;
+	position: absolute;
+	background-color: #1a2438;
+	min-width: 160px;
+	z-index: 1;
+}
+
+.dropdown-content a{
+	float: none;
+	color: white;
+	padding: 12px 16px;
+	text-decoration none;
+	text-align: left;
+	display: block;
+}
+
+.dropdown:hover .dropdown-content{display: block;}
+
+.site-header{
+	font-size:100px; 
+	color:white; 
+	font-family:AmpunBang; 
+	text-align:center; 
+	background-color:#1a2438; 
+	border:3px solid black;
+}
+
+.linktree{
+	margin: auto;
+	text-align: center;
+	border: 5px;
+	border-style: solid;
+	border-radius: 5px;
+	width: 300px;
+
+}
+.linktree ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
