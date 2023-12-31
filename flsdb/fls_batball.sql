@@ -18,31 +18,52 @@ USE `fls`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `games_blaxpbp`
+-- Table structure for table `batball`
 --
 
-DROP TABLE IF EXISTS `games_blaxpbp`;
+DROP TABLE IF EXISTS `batball`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `games_blaxpbp` (
+CREATE TABLE `batball` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `text` varchar(500) NOT NULL,
-  `quarter` varchar(10) NOT NULL,
-  `time` varchar(5) NOT NULL,
-  `game_id` int NOT NULL,
+  `home_total` int NOT NULL,
+  `away_total` int NOT NULL,
+  `home_i1` int NOT NULL,
+  `home_i2` int NOT NULL,
+  `home_i3` int NOT NULL,
+  `home_i4` int NOT NULL,
+  `home_i5` int NOT NULL,
+  `home_i6` int NOT NULL,
+  `home_i7` int NOT NULL,
+  `home_ex` int NOT NULL,
+  `away_i1` int NOT NULL,
+  `away_i2` int NOT NULL,
+  `away_i3` int NOT NULL,
+  `away_i4` int NOT NULL,
+  `away_i5` int NOT NULL,
+  `away_i6` int NOT NULL,
+  `away_i7` int NOT NULL,
+  `away_ex` int NOT NULL,
+  `home_hits` int NOT NULL,
+  `away_hits` int NOT NULL,
+  `home_errors` int NOT NULL,
+  `away_errors` int NOT NULL,
+  `schedule_id` int NOT NULL,
+  `completed` int NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `games_blaxpbp_game_id_78e6b04d_fk_games_boyslacrosse_id` (`game_id`),
-  CONSTRAINT `games_blaxpbp_game_id_78e6b04d_fk_games_boyslacrosse_id` FOREIGN KEY (`game_id`) REFERENCES `games_boyslacrosse` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `schedule_id_idx` (`schedule_id`),
+  CONSTRAINT `schedule` FOREIGN KEY (`schedule_id`) REFERENCES `schedule` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `games_blaxpbp`
+-- Dumping data for table `batball`
 --
 
-LOCK TABLES `games_blaxpbp` WRITE;
-/*!40000 ALTER TABLE `games_blaxpbp` DISABLE KEYS */;
-/*!40000 ALTER TABLE `games_blaxpbp` ENABLE KEYS */;
+LOCK TABLES `batball` WRITE;
+/*!40000 ALTER TABLE `batball` DISABLE KEYS */;
+/*!40000 ALTER TABLE `batball` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +75,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-30 22:20:42
+-- Dump completed on 2023-12-30 22:20:40

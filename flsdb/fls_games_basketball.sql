@@ -43,7 +43,7 @@ CREATE TABLE `games_basketball` (
   PRIMARY KEY (`id`),
   KEY `games_basketball_schedGame_id_f3444cc8_fk_schedule_schedule_id` (`schedGame_id`),
   CONSTRAINT `games_basketball_schedGame_id_f3444cc8_fk_schedule_schedule_id` FOREIGN KEY (`schedGame_id`) REFERENCES `schedule_schedule` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -64,4 +64,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-24  1:01:01
+-- Dump completed on 2023-12-30 22:20:42
