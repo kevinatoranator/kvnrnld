@@ -35,7 +35,7 @@ $date = date("l, F d", strtotime($fdate)); ?>
     $host_name = 'localhost';
     $database = 'fls';
     $user_name = 'root';
-    $password = 'P1ckl3-p@l';
+    $password = '';
     $dbh = null;
 
 	$sql = "SELECT s.time, s.game_date, h.short_name AS home, a.short_name AS away, s.location, s.home_id, s.away_id, s.team_id, t.formattedName FROM schedule AS s JOIN roster_schools a ON s.away_id=a.id JOIN roster_schools h ON s.home_id=h.id JOIN roster_teams AS t ON s.team_id=t.id";
