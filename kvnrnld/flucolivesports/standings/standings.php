@@ -21,7 +21,7 @@
     $host_name = 'localhost';
     $database = 'fls';
     $user_name = 'root';
-    $password = 'P1ckl3-p@l';
+    $password = '';
     $dbh = null;
 	
 	$roster = $_GET['sport'];
