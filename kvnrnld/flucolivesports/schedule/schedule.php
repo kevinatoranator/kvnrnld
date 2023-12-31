@@ -3,29 +3,28 @@
 <head>
 	<title>FLS</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="stylesheet.css">
+	<link rel="stylesheet" href="../stylesheet.css">
 </head>
 <body>
-<?php 
-$date = date("Y-m-d", strtotime("today" ));
-$fdate = date("l, F d", strtotime("today")); ?>
+<?php $fdate = $_GET['fdate'];
+$date = date("l, F d", strtotime($fdate)); ?>
 
 
 <!--Schedule Header-->
 
     <br>
     <div class="flex justify-between">
-        <a href ="./teams/index.php">Teams</a>
-        <a href ="/schedule/">Schedule</a>
+        <a href ="../teams/index.php">Teams</a>
+       <form action='schedule.php' method='get'><input type ='hidden' id='fdate' name='fdate' value='<?php echo date("Y-m-d"); ?>'><input type='submit' class='schedule' value='Schedule'></form>
     </div>
     <br>
     <div class="flex justify-between">
-        <a href ="./standings/index.php">Standings</a><a href ="/schedule/region/{{today}}">Region Schedule</a>
+        <a href ="../standings/index.php">Standings</a><a href ="/schedule/region/{{today}}">Region Schedule</a>
     </div>
 
 <br>
 <div class="flex justify-between">
-<form action='./schedule/schedule.php' method='get'><input type ='hidden' id='fdate' name='fdate' value='<?php echo date("Y-m-d", strtotime("yesterday")); ?>'><input type='submit' class='schedule' value='< <?php echo date("M. d", strtotime("-1 days", strtotime($date)))?>'></form> <b><?php echo $fdate ?></b> <form action='./schedule/schedule.php' method='get'><input type ='hidden' id='fdate' name='fdate' value='<?php echo date("Y-m-d", strtotime("tomorrow")); ?>'><input type='submit' class='schedule' value='<?php echo date("M. d", strtotime("+1 days", strtotime($date)))?> >'></form> 
+<form action='schedule.php' method='get'><input type ='hidden' id='fdate' name='fdate' value='<?php echo date("Y-m-d", strtotime("-1 days", strtotime($fdate))); ?>'><input type='submit' class='schedule' value='< <?php echo date("M. d", strtotime("-1 days", strtotime($fdate)))?>'></form> <b> <?php echo $date ?></b> <form action='schedule.php' method='get'><input type ='hidden' id='fdate' name='fdate' value='<?php echo date("Y-m-d", strtotime("+1 days", strtotime($fdate))); ?>'><input type='submit' class='schedule' value='<?php echo date("M. d", strtotime("+1 days", strtotime($fdate)))?> >'></form>
 </div>
 <br>
 
@@ -51,10 +50,12 @@ $fdate = date("l, F d", strtotime("today")); ?>
 	$query = $db->prepare($sql);
 	$query->execute();
 	while($row = $query->fetchObject()){
-		if($row->game_date == $date){
+		if($row->game_date == $fdate){
 			printf("<div class='text_center'>v------------------------v<br>");
 			printf("<b>%s</b><br>", $row->formattedName);
-			printf("    %s %s vs. %s    <br>", $row->time, $row->home, $row->away);
+			printf("%s EST @%s<br>", $row->time, $row->home);
+			printf("%s<br>", $row->home);
+			printf("%s<br>", $row->away);
 			printf("^------------------------^</div><br><br>");
 		}
 	}
